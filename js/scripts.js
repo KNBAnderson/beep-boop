@@ -29,17 +29,22 @@ function replaceNumbers (array, name) {
 
 //User Interface
 $(function() {
-  // $('h1').hover(function() {
-  //   $(this).fadeIn().text('Beep Boop');
-  // }, function() {
-  //   $(this).remove();
-  // });
+  $('h1').hover(function() {
+    $(this).fadein()
+    $(this).text('Beep Boop');
+    // debugger;
+  }, function() {
+    $(this).remove();
+  });
 
   $('form').submit(function(e) {
     e.preventDefault();
     var number = parseInt($('#number').val());
     var name = $('#name').val();
     var result = replaceNumbers(createNumberedArray(number), name);
+    if (name !== '') {
+      $('span#dave').text(name);
+    }
     $('#results').html('<p>' + result + "</p>")
   })
 });

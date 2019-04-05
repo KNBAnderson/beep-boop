@@ -4,10 +4,11 @@ body {
   background-color: black;
 }
 
-h1 {
+h1, h2 {
   font-family: 'Press Start 2P', cursive;
+  padding-top: 20px;
 }
 
-h2 {
+p {
   font-size: 3.5em;
 }
