@@ -7,31 +7,40 @@ function createNumberedArray (number) {
   return numberedArray;
 }
 
-console.log('95' % 3)
 function replaceNumbers (array, name) {
   var newArray = [];
   for (let i = 0; i <= array.length - 1; i++) {
     if (array[i] % 3 === 0 && array[i] !== '0') {
-      newArray.push("I'm sorry " + name + ". I'm afraid I can't do that")
+      newArray.push("I'm sorry " + name + ". I'm afraid I can't do that<br>")
     } else if (array[i].includes('3')) {
-      newArray.push("I'm sorry Dave. I'm afraid I can't do that.")
+      newArray.push("I'm sorry Dave. I'm afraid I can't do that.<br>")
     } else if (array[i].includes('2')) {
-      newArray.push('Boop!');
+      newArray.push('Boop!<br>');
     } else if (array[i].includes('1')) {
-      newArray.push('Beep!');
+      newArray.push('Beep!<br>');
     } else {
-      newArray.push(array[i]);
+      newArray.push(array[i] + '<br>');
     }
   }
   console.log(newArray)
-  return newArray;
+  return newArray.join('');
 }
 
-replaceNumbers(createNumberedArray(25), 'Katlin');
+
 
 //User Interface
 $(function() {
-  $('#number').on('input', function() {
+  // $('h1').hover(function() {
+  //   $(this).fadeIn().text('Beep Boop');
+  // }, function() {
+  //   $(this).remove();
+  // });
+
+  $('form').submit(function(e) {
+    e.preventDefault();
     var number = parseInt($('#number').val());
+    var name = $('#name').val();
+    var result = replaceNumbers(createNumberedArray(number), name);
+    $('#results').append('<p>' + result + "</p>")
   })
 });
