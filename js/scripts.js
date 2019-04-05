@@ -1,7 +1,7 @@
 //Business Logic
 function createNumberedArray (number) {
   var numberedArray = [];
-  for (let i =0; i < number; i++) {
+  for (let i =0; i <= number; i++) {
     numberedArray.push(i.toString());
   }
   return numberedArray;
@@ -11,15 +11,15 @@ function replaceNumbers (array, name) {
   var newArray = [];
   for (let i = 0; i <= array.length - 1; i++) {
     if (array[i] % 3 === 0 && array[i] !== '0') {
-      newArray.push("I'm sorry " + name + ". I'm afraid I can't do that<br>")
+      newArray.push("I'm sorry " + name + ". I'm afraid I can't do that\n")
     } else if (array[i].includes('3')) {
-      newArray.push("I'm sorry Dave. I'm afraid I can't do that.<br>")
+      newArray.push("I'm sorry Dave. I'm afraid I can't do that.\n")
     } else if (array[i].includes('2')) {
-      newArray.push('Boop!<br>');
+      newArray.push('Boop!\n');
     } else if (array[i].includes('1')) {
-      newArray.push('Beep!<br>');
+      newArray.push('Beep!\n');
     } else {
-      newArray.push(array[i] + '<br>');
+      newArray.push(array[i] + '\n');
     }
   }
   console.log(newArray)
@@ -41,6 +41,6 @@ $(function() {
     var number = parseInt($('#number').val());
     var name = $('#name').val();
     var result = replaceNumbers(createNumberedArray(number), name);
-    $('#results').append('<p>' + result + "</p>")
+    $('#results').text('<p>' + result + "</p>")
   })
 });
