@@ -30,11 +30,10 @@ function replaceNumbers (array, name) {
 //User Interface
 $(function() {
   $('h1').hover(function() {
-    $(this).fadein()
-    $(this).text('Beep Boop');
+    $(this).fadeIn(300).html('<h1>Beep Boop</h1>');
     // debugger;
   }, function() {
-    $(this).remove();
+    $(this).html('<h1>01000010 01100101 01100101 01110000 00100000 01000010 01101111 01101111 01110000</h1>');
   });
 
   $('form').submit(function(e) {
@@ -45,6 +44,6 @@ $(function() {
     if (name !== '') {
       $('span#dave').text(name);
     }
-    $('#results').html('<p>' + result + "</p>")
+    $('#results').show().html('<p>' + result + "</p>")
   })
 });

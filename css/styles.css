@@ -10,5 +10,22 @@ h1, h2 {
 }
 
 p {
-  font-size: 3.5em;
+  font-size: 1.8em;
+}
+
+#results {
+  display: none;
+  height: 500px;
+  margin: 10%;
+  padding-left: 20px;
+  overflow-y:scroll;
+  border: 1px green solid;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: green;
 }
