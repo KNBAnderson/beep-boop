@@ -29,3 +29,8 @@ p {
 ::-webkit-scrollbar-thumb {
   background: green;
 }
+
+button {
+  margin:auto;
+  text align;
+}

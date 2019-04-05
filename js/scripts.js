@@ -25,7 +25,34 @@ function replaceNumbers (array, name) {
   return newArray.join('');
 }
 
+function reverseReplaceNumbers(array, name) {
+  var newArray = [];
+  debugger;
+  for (let i = array.length - 1; i <= 0; i--) {
+    if (array[i] % 3 === 0 && array[i] !== '0') {
+      newArray.push("I'm sorry " + name + ". I'm afraid I can't do that<br>")
+      debugger;
+    } else if (array[i].includes('3')) {
+      debugger;
+      newArray.push("I'm sorry Dave. I'm afraid I can't do that.<br>")
+    } else if (array[i].includes('2')) {
+      debugger;
+      newArray.push('Boop!<br>');
+    } else if (array[i].includes('1')) {
+      debugger;
+      newArray.push('Beep!<br>');
+    } else {
+      debugger;
+      newArray.push(array[i] + '<br>');
+    }
+  }
+  debugger;
+  console.log(newArray);
+  return newArray.join('');
+}
 
+
+console.log(reverseReplaceNumbers(createNumberedArray(15), 'Matt'));
 
 //User Interface
 $(function() {
@@ -37,13 +64,22 @@ $(function() {
   });
 
   $('form').submit(function(e) {
-    e.preventDefault();
     var number = parseInt($('#number').val());
     var name = $('#name').val();
     var result = replaceNumbers(createNumberedArray(number), name);
+    e.preventDefault();
     if (name !== '') {
       $('span#dave').text(name);
     }
     $('#results').show().html('<p>' + result + "</p>")
-  })
+    $('body').append('<button type=\"button\" id=\"reverse\" name=\"reverse\">Put that Beep down, Boop it, and reverse it</button>')
+  });
+
+  $('button#reverse').click(function() {
+    var number = parseInt($('#number').val());
+    var name = $('#name').val();
+    var result = reverseReplaceNumbers(createNumberedArray(number), name);
+    var reversed = result.split('').reverse().join('');
+    console.log(result);
+  });
 });
