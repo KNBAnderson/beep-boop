@@ -75,7 +75,7 @@ $(function() {
     $('body').append('<button type=\"button\" id=\"reverse\" name=\"reverse\">Put that Beep down, Boop it, and reverse it</button>')
   });
 
-
+//I cant get this click to work
   $('#reverse').click(function() {
     var number = parseInt($('#number').val());
     var name = $('#name').val();
