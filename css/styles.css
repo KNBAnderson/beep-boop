@@ -9,6 +9,10 @@ h1, h2 {
   padding-top: 20px;
 }
 
+form, {
+  margin-left: 8%;
+}
+
 p {
   font-size: 1.8em;
 }
@@ -32,5 +36,8 @@ p {
 
 button {
   margin:auto;
-  display: none;
+}
+
+#reverse {
+  display: hidden;
 }
